@@ -1,0 +1,47 @@
+JSON SERVER
+Instalar extensão no vscode THUNDER CLIENT
+Instalar node.js
+1- npm install json-server
+2- criação do arquivo "db.json"
+3- Entrar no google classroom e procurar a documentação do NPM (dentro do material de aula do dia 16/03)
+4- depois de copiar o código do arquivo db.json no site do NPM, vão colar o código no vscode no arquivo db.json
+5- executar o comando no terminal 
+npx json-server --watch db.json --port 8000 - Especifica em qual porta irá rodar
+npm start
+npm stop
+
+6-
+CRIAR A ENTIDADE SERIES
+CRIAR OBJETO
+CRIAR PROPRIEDADES
+
+PARA CRIAR UMA PASTA E COLOCAR O DB.JSON - 
+PARA EXECULTAR = npx nomedapasta/json-server --watch db.json --port 8000
+
+7-
+PARA AUTOMATIZAR O NPX CRIAR SCRIPTS NA PASTA PACKAGE.JSON
+
+
+embed = pegar os valores da tabela relacionada
+http://localhost:8000/locacao?_embed=cliente      ***OBS: NÚMERO DA PORTA
+
+embed = para relacionar duas tabelas com operador lógico and &         ***OBS: NÚMERO DA PORTA
+http://localhost:8000/locacao?_embed=cliente&_embed=filme
+
+
+https://mockapi.io/
+
+
+
+
+
+
+npm install json-server
+
+npx json-server --watch
+	
+npm install 
+
+criar banco de dados db.json
+Rodar o json-server
+json-server --watch db.json --port 9000 - 

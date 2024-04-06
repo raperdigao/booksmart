@@ -1,0 +1,28 @@
+extensão material icon instalar no vscode
+
+Abrir o git bash
+
+Aluno@DESKTOP-LNC75CH MINGW64 ~/Desktop
+$
+
+Aluno@DESKTOP-LNC75CH MINGW64 ~/Desktop
+clonar o repositorio no git hub
+Depois pressionar shift + insert
+
+$ git clone https://github.com/raperdigao/SeriesProject-Jsonserver.git
+Cloning into 'SeriesProject-Jsonserver'...
+remote: Enumerating objects: 4, done.
+remote: Counting objects: 100% (4/4), done.
+remote: Compressing objects: 100% (3/3), done.
+remote: Total 4 (delta 0), reused 0 (delta 0), pack-reused 0
+Receiving objects: 100% (4/4), done.
+
+
+Aluno@DESKTOP-LNC75CH MINGW64 ~/Desktop
+$ cd SeriesProject-Jsonserver/
+
+Aluno@DESKTOP-LNC75CH MINGW64 ~/Desktop/SeriesProject-Jsonserver (main)
+$ code .
+
+Aluno@DESKTOP-LNC75CH MINGW64 ~/Desktop/SeriesProject-Jsonserver (main)
+$

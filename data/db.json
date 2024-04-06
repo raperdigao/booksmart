@@ -1,0 +1,109 @@
+{
+  "series": [
+    {
+      "id": "55",
+      "nomeSerie": "filme",
+      "numTemporada": "21",
+      "nomeEstudio": "Estudio",
+      "anoLancamento": "2010"
+    },
+    {
+      "id": "58",
+      "nomeSerie": "Teste",
+      "numTemporada": "21",
+      "nomeEstudio": "12",
+      "anoLancamento": "1990"
+    },
+    {
+      "id": "36",
+      "nomeSerie": "",
+      "numTemporada": "",
+      "nomeEstudio": "",
+      "anoLancamento": ""
+    },
+    {
+      "id": "33",
+      "nomeSerie": "alkjdfhsda",
+      "numTemporada": "83",
+      "nomeEstudio": "teste",
+      "anoLancamento": "2004"
+    },
+    {
+      "id": "9",
+      "nomeSerie": "Claudia",
+      "numTemporada": "10",
+      "nomeEstudio": "Portugual",
+      "anoLancamento": "2024"
+    },
+    {
+      "id": "18",
+      "nomeSerie": "Matrix",
+      "numTemporada": "20",
+      "nomeEstudio": "comedia",
+      "anoLancamento": "2012"
+    },
+    {
+      "id": "3",
+      "nomeSerie": "Karen",
+      "numTemporada": "2",
+      "nomeEstudio": "comedia",
+      "anoLancamento": "2012"
+    },
+    {
+      "id": "86",
+      "nomeSerie": "Karen",
+      "numTemporada": "25",
+      "nomeEstudio": "comedia",
+      "anoLancamento": "2012"
+    },
+    {
+      "id": "42",
+      "nomeSerie": "",
+      "numTemporada": "",
+      "nomeEstudio": "",
+      "anoLancamento": ""
+    },
+    {
+      "id": "57",
+      "nomeSerie": "Matrix",
+      "numTemporada": "2",
+      "nomeEstudio": "comedia",
+      "anoLancamento": "2012"
+    },
+    {
+      "id": "45",
+      "nomeSerie": "Matrix",
+      "numTemporada": "2",
+      "nomeEstudio": "comedia",
+      "anoLancamento": "2012"
+    },
+    {
+      "id": "60",
+      "nomeSerie": "Matrix of the Dragon",
+      "numTemporada": "1",
+      "nomeEstudio": "comedia",
+      "anoLancamento": "2010"
+    },
+    {
+      "id": "0",
+      "nomeSerie": "Matrix",
+      "numTemporada": "2",
+      "nomeEstudio": "comedia",
+      "anoLancamento": "2012"
+    },
+    {
+      "id": "41",
+      "nomeSerie": "Matrix",
+      "numTemporada": "2",
+      "nomeEstudio": "comedia",
+      "anoLancamento": "2012"
+    },
+    {
+      "id": "45",
+      "nomeSerie": "Matrix",
+      "numTemporada": "2",
+      "nomeEstudio": "comedia",
+      "anoLancamento": "2012"
+    }
+  ]
+}
