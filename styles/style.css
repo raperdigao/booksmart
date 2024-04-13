@@ -32,6 +32,7 @@ header {
 .nav-flex__logo-senai>img {
   height: 50%;
   width: 140px;
+  border-radius: 50px;
 }
 
 .nav-flex {
