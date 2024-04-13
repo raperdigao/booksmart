@@ -20,12 +20,16 @@ body {
   font-family: var(--primary-font);
 }
 
+header {
+  background: radial-gradient(circle, rgba(181,29,68,1) 0%, rgba(95,84,87,1) 100%);
+  }
+
 .container-grid {
   max-width: 1000px;
   margin: 0 auto;
 }
 
-.nav-flex__logo-senai > img {
+.nav-flex__logo-senai>img {
   height: 50%;
   width: 140px;
 }
@@ -54,22 +58,22 @@ body {
   list-style-type: none;
 }
 
-.nav-flex__links-list > li > a {
-  color: black;
+.nav-flex__links-list>li>a {
+  color: white;
   font-size: 1.2rem;
   text-decoration: none;
 }
 
 /* realizar estilização do main */
 
-#main > h2 {
+#main>h2 {
   text-align: center;
   margin-top: 2%;
 }
 
 .section-flex {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+  display: flexbox;
+  flex-direction: column;
   gap: 40px;
   margin-top: 40px;
 }
@@ -80,7 +84,7 @@ body {
   padding: 20px;
 }
 
-.main-flex__form > h2 {
+.main-flex__form>h2 {
   text-align: center;
   margin-bottom: 10px;
 }
@@ -121,34 +125,35 @@ input[type="number"] {
   justify-content: space-between;
 }
 
-.main-flex__button > button {
+.main-flex__button>button {
   border: none;
   outline: none;
   color: white;
+  font-weight: bold;
   border-radius: 8px;
   background-color: darkgray;
   width: 40%;
   cursor: not-allowed;
 }
 
-.main-flex__button > button:enabled,
-.main-flex__button > button:enabled:active {
-  background-color: var(--primary-color);
+.main-flex__button>button:enabled,
+.main-flex__button>button:enabled:active {
+  background: radial-gradient(circle, rgba(181,29,68,1) 0%, rgba(95,84,87,1) 100%);
   cursor: pointer;
 }
 
 /* Estilizar a tabela */
 
-.main-flex__listagem-flex > h2 {
+.main-flex__listagem-flex>h2 {
   text-align: center;
   margin-bottom: 10px;
 }
 
-tbody > tr:nth-child(even) {
+tbody>tr:nth-child(even) {
   background-color: var(--primary-color);
   color: white;
-  
-  
+
+
 }
 
 table {
@@ -168,32 +173,33 @@ th {
   background-color: #f2f2f2;
 }
 
-tr > div {
+tr>div {
   display: flex;
   align-items: center;
   justify-content: center;
   height: 40px;
   padding: 5px;
- 
-  
+
+
 }
 
 
 /* Editar os icones da imagem que estão no java script */
-tr > div > img {
+tr>div>img {
   cursor: pointer;
-  
+
 }
 
 
 .editar {
   cursor: pointer;
-  
+
 }
+
 .delete {
   cursor: pointer;
   margin-left: 6px;
- 
+
 }
 
 .td-bootstrap {
@@ -206,6 +212,21 @@ tr > div > img {
 
 footer {
   box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.35);
+  background: radial-gradient(circle, rgba(181,29,68,1) 0%, rgba(95,84,87,1) 100%);
+
+}
+
+.informacoes h1 {
+  color: white;
+}
+.informacoes p {
+  color: white;
+}
+.contato h1 {
+  color: white;
+}
+.contato p {
+  color: white;
 }
 
 .footer-style__grid {
@@ -220,7 +241,7 @@ footer {
   padding: 30px;
 }
 
-.footer-style__grid > article {
+.footer-style__grid>article {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -229,7 +250,7 @@ footer {
   font-size: 1.1rem;
 }
 
-.footer-style__grid > article > h1 {
+.footer-style__grid>article>h1 {
   font-weight: 700;
   text-transform: uppercase;
 }

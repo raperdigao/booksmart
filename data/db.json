@@ -71,37 +71,16 @@
       "anoLancamento": "2012"
     },
     {
-      "id": "45",
-      "nomeSerie": "Matrix",
-      "numTemporada": "2",
+      "id": 1,
+      "nomeSerie": "Karen",
+      "numTemporada": "200",
       "nomeEstudio": "comedia",
       "anoLancamento": "2012"
     },
     {
-      "id": "60",
-      "nomeSerie": "Matrix of the Dragon",
-      "numTemporada": "1",
-      "nomeEstudio": "comedia",
-      "anoLancamento": "2010"
-    },
-    {
-      "id": "0",
+      "id": 73,
       "nomeSerie": "Matrix",
-      "numTemporada": "2",
-      "nomeEstudio": "comedia",
-      "anoLancamento": "2012"
-    },
-    {
-      "id": "41",
-      "nomeSerie": "Matrix",
-      "numTemporada": "2",
-      "nomeEstudio": "comedia",
-      "anoLancamento": "2012"
-    },
-    {
-      "id": "45",
-      "nomeSerie": "Matrix",
-      "numTemporada": "2",
+      "numTemporada": "300",
       "nomeEstudio": "comedia",
       "anoLancamento": "2012"
     }

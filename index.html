@@ -5,11 +5,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="author" content="Raphael Perdigão">
+    <meta name="Description"
+        content="Neste projeto, os alunos terão que criar uma API através do servidor Json-Server que permite a criação de API's Fake. Para isso os alunos irão criar o json-server com dois endpoints, o primeiro para cadastro de usuários e o segundo para cadastro de livros" />
+    <meta name="keywords" content="Adição, edição, exclusão e listagem de livros no acervo" />
     <link rel="stylesheet" href="./styles/style.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
     <script defer src="scrips/script.js"></script>
     <script defer src="scrips/post.js"></script>
-    <title>Series Project with json-server</title>
+    <title>Sistema de gerenciamento de livros</title>
 </head>
 
 <body>
@@ -17,13 +20,13 @@
         <nav class="container-grid nav-flex__elements">
 
             <div class="nav-flex__logo-senai">
-                <img src="./assets/images/SENAI_São_Paulo_logo.png" alt="logo senai">
+                <img src="./assets/images/LogoBookSmart.PNG" alt="logo senai">
             </div>
 
             <div class="nav-flex__links">
                 <ul class="nav-flex__links-list">
-                    <li><a href="#">Home</a></li>
-                    <li><a href="#main">Conteúdo</a></li>
+                    <li><a href="#">Usuários</a></li>
+                    <li><a href="livros.html">Livros</a></li>
                     <li><a href="#footer">Contato</a></li>
                 </ul>
             </div>
@@ -32,38 +35,47 @@
     </header>
     <main id="main">
         <h2>
-            Seja bem vindo ao sistema de cadastro de séries
+            Seja bem vindo ao Projeto - Sistema de gerenciamento de livros
         </h2>
 
         <section class="container-grid section-flex">
             <article class="main-flex">
                 <div class="main-flex__form">
                     <h2 id="title-form">
-                        Cadastro de séries
+                        Cadastro de Usuários
                     </h2>
+
+
+                    <!-- Primeiro Endpoint: -->
+
 
                     <form action="" class="main-flex__form-element" id="formValidation">
                         <div class="main-flex__inputs">
-                            <label for=""> Informe o nome da série: </label>
-                            <input type="text" placeholder="Ex: House of the dragon" id="nomeSerie" required>
+                            <label for=""> Informe o nome do usuário: </label>
+                            <input type="text" placeholder="Ex: Raphael Perdigão" id="nomeUsuario" required>
                         </div>
                         <div class="main-flex__inputs">
-                            <label for=""> Informe a quantidade de temporadas: </label>
-                            <input type="number" placeholder="Ex: 8" id="numTemporada" required min="1" max="20">
+                            <label for=""> Informe a idade: </label>
+                            <input type="number" placeholder="Ex: 20" id="numIdade" required min="1" max="20">
                         </div>
                         <div class="main-flex__inputs">
-                            <label for=""> Informe o nome do estúdio: </label>
-                            <input type="text" placeholder="Ex: HBO Max" id="nomeEstudio" required >
+                            <label for=""> Informe o endereço: </label>
+                            <input type="text" placeholder="Ex: Rua: Alba" id="nomeEndereco" required>
                         </div>
                         <div class="main-flex__inputs">
-                            <label for=""> Informe o ano de lançamento:  </label>
-                            <input type="number" placeholder="Ex: 2012" id="anoLancamento" required max="2024">
+                            <label for=""> Informe o email: </label>
+                            <input type="text" placeholder="Ex: ra.perdigao@gmail.com" id="email" required max="2024">
+                        </div>
+
+                        <div class="main-flex__inputs">
+                            <label for=""> Informe o telefone: </label>
+                            <input type="number" placeholder="Ex: 11973181837" id="numTelefone" required min="1" max="20">
                         </div>
 
 
                         <div class="main-flex__button">
                             <button type="submit" id="btnCadastrar">
-                                Cadastrar Serie
+                                Cadastrar o Usuário
                             </button>
                             <button type="reset">
                                 Cancelar
@@ -72,31 +84,32 @@
                     </form>
                 </div>
             </article>
-            
+
 
             <article class="main-flex">
                 <div class="main-flex__listagem-flex">
                     <h2>
-                        Lista de séries
+                        Lista de Usuários
                     </h2>
 
                     <table class="main-flex__listagem-flex__table">
                         <thead class="table-cabecalho">
                             <tr>
-                                <th>Nome Série</th>
-                                <th>Num Temporadas</th>
-                                <th>Ano Lancamento</th>
-                                <th>Estudio</th>
+                                <th>Nome de Usuário</th>
+                                <th>Idade</th>
+                                <th>Endereço</th>
+                                <th>E-mail</th>
+                                <th>Telefone</th>
                                 <th>Ações</th>
                             </tr>
                         </thead>
-                        <tbody id="listaSeries">
-                            
-                            
-                               <!-- Quem vai criar os dados será o JS -->
-                            
+                        <tbody id="listaUsuarios">
 
-                          
+
+                            <!-- Quem vai criar os dados será o JS -->
+
+
+
                         </tbody>
                     </table>
                 </div>
@@ -107,26 +120,26 @@
 
 
     <footer>
-        <section class="footer-style__grid container-grid">
-            <article>
+        <section id="footer" class="footer-style__grid container-grid">
+            <article class="informacoes">
                 <h1> Mais informações: </h1>
 
-                <p><strong>Escola:</strong> Senai Conde José Vicente de Azevedo</p>
-                <p><strong>Telefone:</strong>(11) 97318-1837</p>
-                <p><strong>Endereço:</strong> Rua Moreira de godói, 226 Ipiranga - SP</p>
+                <p><strong>Empresa:</strong> BookSmart LTDA</p>
+                <p><strong>Telefone:</strong> (11) 97318-1837</p>
+                <p><strong>Endereço:</strong> Rua Major Freire, 226 - Saúde - SP</p>
             </article>
 
-            <article>
+            <article class="contato">
                 <h1> Contato:</h1>
 
-                <p><strong>Nome:</strong> Senai Conde José Vicente de Azevedo</p>
-                <p><strong>Telefone:</strong>(11) 97318-1837</p>
-                <p><strong>Email:</strong>ra.perdigao@gmail.com</p>
+                <p><strong>Nome:</strong> Raphael / Everton</p>
+                <p><strong>Telefone:</strong> (11) 97318-1837</p>
+                <p><strong>Email:</strong> ra.perdigao@gmail.com</p>
             </article>
         </section>
     </footer>
 
-   
+
 </body>
 
 </html>
