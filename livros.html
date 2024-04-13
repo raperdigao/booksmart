@@ -25,7 +25,7 @@
 
             <div class="nav-flex__links">
                 <ul class="nav-flex__links-list">
-                    <li><a href="#">Usuários</a></li>
+                    <li><a href="index.html">Usuários</a></li>
                     <li><a href="livros.html">Livros</a></li>
                     <li><a href="#footer">Contato</a></li>
                 </ul>
@@ -42,7 +42,7 @@
             <article class="main-flex">
                 <div class="main-flex__form">
                     <h2 id="title-form">
-                        Cadastro de usuários
+                        Cadastro de Livros
                     </h2>
 
 
@@ -51,31 +51,31 @@
 
                     <form action="" class="main-flex__form-element" id="formValidation">
                         <div class="main-flex__inputs">
-                            <label for=""> Informe o nome do usuário: </label>
-                            <input type="text" placeholder="Ex: Raphael Perdigão" id="nomeUsuario" required>
+                            <label for=""> Informe o nome do livro: </label>
+                            <input type="text" placeholder="Ex: Introdução ao Java Script" id="nomeLivro" required>
                         </div>
                         <div class="main-flex__inputs">
-                            <label for=""> Informe a idade: </label>
-                            <input type="number" placeholder="Ex: 20" id="numIdade" required min="1" max="20">
+                            <label for=""> Informe o autor: </label>
+                            <input type="text" placeholder="Ex: Brendan Eich" id="nomeAutor" required min="1" max="20">
                         </div>
                         <div class="main-flex__inputs">
-                            <label for=""> Informe o endereço: </label>
-                            <input type="text" placeholder="Ex: Rua: Alba" id="nomeEndereco" required>
+                            <label for=""> Informe a biografia: </label>
+                            <input type="text" placeholder="Ex: David Flanagan" id="nomeBibliografia" required>
                         </div>
                         <div class="main-flex__inputs">
-                            <label for=""> Informe o email: </label>
-                            <input type="text" placeholder="Ex: ra.perdigao@gmail.com" id="email" required max="2024">
+                            <label for=""> Informe a edição: </label>
+                            <input type="number" placeholder="Ex: 2024" id="edicao" required max="2024">
                         </div>
 
                         <div class="main-flex__inputs">
-                            <label for=""> Informe o telefone: </label>
-                            <input type="number" placeholder="Ex: 11973181837" id="numTelefone" required min="1" max="20">
+                            <label for=""> Informe a editora: </label>
+                            <input type="text" placeholder="Ex: Saraiva" id="nomeEditora" required min="1" max="20">
                         </div>
 
 
                         <div class="main-flex__button">
                             <button type="submit" id="btnCadastrar">
-                                Cadastrar o usuário
+                                Cadastrar o livro
                             </button>
                             <button type="reset">
                                 Cancelar
@@ -89,21 +89,21 @@
             <article class="main-flex">
                 <div class="main-flex__listagem-flex">
                     <h2>
-                        Lista de Usuários
+                        Lista de Livros
                     </h2>
 
                     <table class="main-flex__listagem-flex__table">
                         <thead class="table-cabecalho">
                             <tr>
-                                <th>Nome do usuário</th>
-                                <th>Idade</th>
-                                <th>Endereço</th>
-                                <th>E-mail</th>
-                                <th>Telefone</th>
+                                <th>Nome do livro</th>
+                                <th>Autor</th>
+                                <th>Biografia</th>
+                                <th>Edição</th>
+                                <th>Editora</th>
                                 <th>Ações</th>
                             </tr>
                         </thead>
-                        <tbody id="listaUsuarios">
+                        <tbody id="listaLivros">
 
 
                             <!-- Quem vai criar os dados será o JS -->
