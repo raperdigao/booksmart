@@ -21,8 +21,8 @@ body {
 }
 
 header {
-  background: radial-gradient(circle, rgba(181,29,68,1) 0%, rgba(95,84,87,1) 100%);
-  }
+  background: radial-gradient(circle, rgba(181, 29, 68, 1) 0%, rgba(95, 84, 87, 1) 100%);
+}
 
 .container-grid {
   max-width: 1000px;
@@ -73,7 +73,7 @@ header {
 }
 
 .section-flex {
-  display: flexbox;
+  display: flex;
   flex-direction: column;
   gap: 40px;
   margin-top: 40px;
@@ -83,6 +83,7 @@ header {
   box-shadow: 5px 8px 15px rgba(0, 0, 0, 0.35);
   border-radius: 8px;
   padding: 20px;
+  margin-top: 30px;
 }
 
 .main-flex__form>h2 {
@@ -139,7 +140,7 @@ input[type="number"] {
 
 .main-flex__button>button:enabled,
 .main-flex__button>button:enabled:active {
-  background: radial-gradient(circle, rgba(181,29,68,1) 0%, rgba(95,84,87,1) 100%);
+  background: radial-gradient(circle, rgba(181, 29, 68, 1) 0%, rgba(95, 84, 87, 1) 100%);
   cursor: pointer;
 }
 
@@ -154,6 +155,22 @@ tbody>tr:nth-child(even) {
   background-color: var(--primary-color);
   color: white;
 
+
+}
+
+
+.btn-pesquisar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+
+.btn-pesquisar>button {
+
+  width: 20%;
+  height: 40px;
 
 }
 
@@ -213,19 +230,22 @@ tr>div>img {
 
 footer {
   box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.35);
-  background: radial-gradient(circle, rgba(181,29,68,1) 0%, rgba(95,84,87,1) 100%);
+  background: radial-gradient(circle, rgba(181, 29, 68, 1) 0%, rgba(95, 84, 87, 1) 100%);
 
 }
 
 .informacoes h1 {
   color: white;
 }
+
 .informacoes p {
   color: white;
 }
+
 .contato h1 {
   color: white;
 }
+
 .contato p {
   color: white;
 }

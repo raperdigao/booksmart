@@ -85,6 +85,80 @@
                 </div>
             </article>
 
+            <!-- Pesquisa de livros por título, autor, categoria, etc. -->
+
+            <article class="main-flex">
+                <div class="main-flex__listagem-flex">
+
+
+
+
+
+
+
+                    <div class="main-flex__form">
+                        <h2 id="title-form">
+                            Pesquisa de livros
+                        </h2>
+
+
+                        <!-- Primeiro Endpoint: -->
+
+
+                        <form action="" class="main-flex__form-element" id="formValidation">
+
+
+                            <div class="main-flex__inputs">
+                                <label for=""> Informe os dados do livro: </label>
+                                <input type="text" placeholder="Ex: título, autor, categoria" id="nomeEditora" required
+                                    min="1" max="20">
+                            </div>
+
+
+                            <div class="main-flex__button btn-pesquisar">
+                                <button type="submit" id="btnCadastrar">
+                                    Pesquisar o livro
+                                </button>
+
+                            </div>
+                        </form>
+                    </div>
+
+
+
+
+
+
+
+
+
+                    <table class="main-flex__listagem-flex__table">
+                        <thead class="table-cabecalho">
+                            <tr>
+                                <th>Nome do livro</th>
+                                <th>Autor</th>
+                                <th>Biografia</th>
+                                <th>Edição</th>
+                                <th>Editora</th>
+                                <th>Ações</th>
+                            </tr>
+                        </thead>
+                        <tbody id="listaLivros">
+
+
+                            <!-- Quem vai criar os dados será o JS -->
+
+
+
+                        </tbody>
+                    </table>
+                </div>
+            </article>
+
+            <!-- Fim da pesquisa dos livros -->
+
+
+
 
             <article class="main-flex">
                 <div class="main-flex__listagem-flex">
