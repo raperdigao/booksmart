@@ -12,6 +12,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
     <script defer src="scrips/script.js"></script>
     <script defer src="scrips/post.js"></script>
+    <script defer src="scrips/endpoint2.js"></script>
     <title>Sistema de gerenciamento de livros</title>
 </head>
 
@@ -86,6 +87,34 @@
             </article>
 
             <!-- Pesquisa de livros por título, autor, categoria, etc. -->
+            <article class="main-flex">
+                <div class="main-flex__listagem-flex">
+                    <h2>
+                        Lista de Livros
+                    </h2>
+
+                    <table class="main-flex__listagem-flex__table">
+                        <thead class="table-cabecalho">
+                            <tr>
+                                <th>Nome do livro</th>
+                                <th>Autor</th>
+                                <th>Biografia</th>
+                                <th>Edição</th>
+                                <th>Editora</th>
+                                <th>Ações</th>
+                            </tr>
+                        </thead>
+                        <tbody id="listaLivros">
+
+
+                            <!-- Quem vai criar os dados será o JS -->
+
+
+
+                        </tbody>
+                    </table>
+                </div>
+            </article>
 
             <article class="main-flex">
                 <div class="main-flex__listagem-flex">
@@ -160,34 +189,7 @@
 
 
 
-            <article class="main-flex">
-                <div class="main-flex__listagem-flex">
-                    <h2>
-                        Lista de Livros
-                    </h2>
-
-                    <table class="main-flex__listagem-flex__table">
-                        <thead class="table-cabecalho">
-                            <tr>
-                                <th>Nome do livro</th>
-                                <th>Autor</th>
-                                <th>Biografia</th>
-                                <th>Edição</th>
-                                <th>Editora</th>
-                                <th>Ações</th>
-                            </tr>
-                        </thead>
-                        <tbody id="listaLivros">
-
-
-                            <!-- Quem vai criar os dados será o JS -->
-
-
-
-                        </tbody>
-                    </table>
-                </div>
-            </article>
+            
         </section>
     </main>
 
@@ -215,5 +217,135 @@
 
 
 </body>
+<script>document.addEventListener("DOMContentLoaded", () => {
+    const url = "http://localhost:8001/livros";
+
+    // Função para obter e exibir os livros
+    async function getLivros() {
+        try {
+            const response = await fetch(url);
+            const dados = await response.json();
+
+            // Limpa a lista de livros antes de adicionar os novos
+            const listaLivros = document.getElementById("listaLivros");
+            listaLivros.innerHTML = "";
+
+            // Itera sobre os livros e os adiciona à tabela
+            dados.forEach((livro) => {
+                const tr = document.createElement("tr");
+
+                const nomeLivro = document.createElement("td");
+                nomeLivro.textContent = livro.nomeLivro;
+
+                const autor = document.createElement("td");
+                autor.textContent = livro.autor;
+
+                const biografia = document.createElement("td");
+                biografia.textContent = livro.biografia;
+
+                const edicao = document.createElement("td");
+                edicao.textContent = livro.edicao;
+
+                const editora = document.createElement("td");
+                editora.textContent = livro.editora;
+
+                // Botão para editar
+                const btnEditar = document.createElement("button");
+                btnEditar.textContent = "Editar";
+                btnEditar.classList.add("btn-editar");
+                btnEditar.addEventListener("click", () => {
+                    // Lógica para editar o livro
+                    alert("Editar livro: " + livro.nomeLivro);
+                });
+
+                // Botão para excluir
+                const btnExcluir = document.createElement("button");
+                btnExcluir.textContent = "Excluir";
+                btnExcluir.classList.add("btn-excluir");
+                btnExcluir.addEventListener("click", async () => {
+                    // Lógica para excluir o livro
+                    const confirmarExclusao = confirm("Tem certeza que deseja excluir o livro?");
+                    if (confirmarExclusao) {
+                        try {
+                            const response = await fetch(`${url}/${livro.id}`, {
+                                method: "DELETE"
+                            });
+                            if (response.ok) {
+                                alert("Livro excluído com sucesso!");
+                                getLivros(); // Atualiza a lista de livros após a exclusão
+                            } else {
+                                throw new Error("Erro ao excluir o livro.");
+                            }
+                        } catch (error) {
+                            console.error(error);
+                            alert("Erro ao excluir o livro. Tente novamente mais tarde.");
+                        }
+                    }
+                });
+
+                const acoes = document.createElement("td");
+                acoes.appendChild(btnEditar);
+                acoes.appendChild(btnExcluir);
+
+                tr.appendChild(nomeLivro);
+                tr.appendChild(autor);
+                tr.appendChild(biografia);
+                tr.appendChild(edicao);
+                tr.appendChild(editora);
+                tr.appendChild(acoes);
+
+                listaLivros.appendChild(tr);
+            });
+        } catch (error) {
+            console.error("Erro ao obter os livros:", error);
+            alert("Erro ao obter os livros. Tente novamente mais tarde.");
+        }
+    }
+
+    // Chama a função para exibir os livros ao carregar a página
+    getLivros();
+
+    // Função para lidar com o envio do formulário de cadastro de livros
+    const formCadastro = document.getElementById("formCadastro");
+    formCadastro.addEventListener("submit", async (event) => {
+        event.preventDefault();
+
+        const nomeLivro = document.getElementById("nomeLivro").value;
+        const autor = document.getElementById("nomeAutor").value;
+        const biografia = document.getElementById("nomeBibliografia").value;
+        const edicao = document.getElementById("edicao").value;
+        const editora = document.getElementById("nomeEditora").value;
+
+        const dadosEnviados = {
+            nomeLivro,
+            autor,
+            biografia,
+            edicao,
+            editora
+        };
+
+        try {
+            const response = await fetch(url, {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify(dadosEnviados)
+            });
+
+            if (response.ok) {
+                alert("Livro cadastrado com sucesso!");
+                getLivros(); // Atualiza a lista de livros após o cadastro
+                formCadastro.reset(); // Limpa o formulário
+            } else {
+                throw new Error("Erro ao cadastrar o livro.");
+            }
+        } catch (error) {
+            console.error("Erro ao cadastrar o livro:", error);
+            alert("Erro ao cadastrar o livro. Tente novamente mais tarde.");
+        }
+    });
+});
+</script>
 
 </html>

@@ -1,42 +1,44 @@
-document.getElementById('btnCadastrar').addEventListener('click', async (e) => {
-      e.preventDefault(); // Previmir o envio do formulario
-      
-      //url do endpoint da aplicação web api
-      const url = "http://localhost:8000/series"
-
-      // valores que esta vindo do front end
-
-      const dadosEnviados = {
-            'id': Math.floor(Math.random() * 100),
-            'nomeSerie': document.getElementById('nomeSerie').value,
-            'numTemporada': document.getElementById('numTemporada').value,
-            'nomeEstudio': document.getElementById('nomeEstudio').value,
-            'anoLancamento': document.getElementById('anoLancamento').value
-      }
-
-      try {
-            await fetch(url, {
-                  method: 'POST',
-                  headers: {
-                        'Content-Type': 'application/json'
-                  },
-                  body: JSON.stringify(dadosEnviados)
-            })
-
-            const response = await fetch(url)
-
-            if (response.ok) {
-                  alert("A Série foi cadastrado com sucesso")
-            } else {
-                  alert("Erro ao cadastrar série. Tente novamente")
-            }
-
-            window.location.reload()
-
-            document.getElementById('btnCadastrar').removeEventListener('click', arguments.callee)
-
-            
-      } catch (error) {
-            console.log(`O consumo do post deu ruim ${error}`);
-      }
-})
+// document.getElementById('btnCadastrar').addEventListener('click', async (e) => {
+//       e.preventDefault(); // Prevenir o envio do formulário
+  
+//       // URL do endpoint da aplicação web API
+//       const url = "http://localhost:8001/usuarios";
+  
+//       // Valores que estão vindo do front-end
+//       const nomeUsuario = document.getElementById('nomeUsuario').value;
+//       const idade = document.getElementById('numIdade').value;
+//       const endereco = document.getElementById('nomeEndereco').value;
+//       const email = document.getElementById('email').value;
+//       const telefone = document.getElementById('numTelefone').value;
+  
+//       const dadosEnviados = {
+//           'nomeUsuario': nomeUsuario,
+//           'idade': idade,
+//           'endereco': endereco,
+//           'email': email,
+//           'telefone': telefone
+//       };
+  
+//       try {
+//           const response = await fetch(url, {
+//               method: 'POST',
+//               headers: {
+//                   'Content-Type': 'application/json'
+//               },
+//               body: JSON.stringify(dadosEnviados)
+//           });
+  
+//           if (response.ok) {
+//               alert("O usuário foi cadastrado com sucesso");
+//               // Atualizar a tabela de usuários após o cadastro bem-sucedido (opcional)
+//               getUsuarios();
+//               // Limpar o formulário após o cadastro bem-sucedido
+//               document.getElementById('formCadastro').reset();
+//           } else {
+//               alert("Erro ao cadastrar usuário. Tente novamente");
+//           }
+//       } catch (error) {
+//           console.log(`O consumo do POST deu ruim: ${error}`);
+//       }
+//   });
+  

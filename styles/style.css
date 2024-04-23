@@ -8,7 +8,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
 
 :root {
-  --primary-color: #b51d44;
+  --primary-color: #409ec6;
   --primary-font: "Montserrat", sans-serif;
 }
 
@@ -21,7 +21,7 @@ body {
 }
 
 header {
-  background: radial-gradient(circle, rgba(181, 29, 68, 1) 0%, rgba(95, 84, 87, 1) 100%);
+  background: #409ec6;
 }
 
 .container-grid {
@@ -140,7 +140,7 @@ input[type="number"] {
 
 .main-flex__button>button:enabled,
 .main-flex__button>button:enabled:active {
-  background: radial-gradient(circle, rgba(181, 29, 68, 1) 0%, rgba(95, 84, 87, 1) 100%);
+  background: #409ec6;
   cursor: pointer;
 }
 
@@ -230,7 +230,7 @@ tr>div>img {
 
 footer {
   box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.35);
-  background: radial-gradient(circle, rgba(181, 29, 68, 1) 0%, rgba(95, 84, 87, 1) 100%);
+  background: #409ec6;
 
 }
 

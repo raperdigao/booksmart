@@ -13,6 +13,25 @@
     <script defer src="scrips/script.js"></script>
     <script defer src="scrips/post.js"></script>
     <title>Sistema de gerenciamento de livros</title>
+    <style>
+        .btn-editar,
+        .btn-excluir {
+            padding: 8px 16px;
+            background-color: #409ec6;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            margin-right: 5px;
+        }
+
+        .btn-editar:hover,
+        .btn-excluir:hover {
+            background-color: #ffffff;
+            color: black;
+        }
+    </style>
 </head>
 
 <body>
@@ -35,7 +54,7 @@
     </header>
     <main id="main">
         <h2>
-            Seja bem vindo ao Projeto - Sistema de gerenciamento de livros
+            Seja bem vindo ao Projeto - Sistema de gerenciamento de livro
         </h2>
 
         <section class="container-grid section-flex">
@@ -49,7 +68,7 @@
                     <!-- Primeiro Endpoint: -->
 
 
-                    <form action="" class="main-flex__form-element" id="formValidation">
+                    <form action="" class="main-flex__form-element" id="formCadastro">
                         <div class="main-flex__inputs">
                             <label for=""> Informe o nome do usuário: </label>
                             <input type="text" placeholder="Ex: Raphael Perdigão" id="nomeUsuario" required>
@@ -139,6 +158,121 @@
         </section>
     </footer>
 
+
+    <script>
+ // Função para buscar e exibir os usuários da API
+ async function getUsuarios() {
+            try {
+                const url = "http://localhost:8001/series"; // Endpoint da API
+                const response = await fetch(url);
+                const usuarios = await response.json();
+
+                // Limpa a tabela antes de adicionar os novos dados
+                const listaUsuarios = document.getElementById("listaUsuarios");
+                listaUsuarios.innerHTML = "";
+
+                // Itera sobre os usuários e adiciona-os na tabela
+                usuarios.forEach((usuario) => {
+                    const tr = document.createElement("tr");
+                    tr.innerHTML = `
+                        <td>${usuario.nomeUsuario}</td>
+                        <td>${usuario.idade}</td>
+                        <td>${usuario.endereco}</td>
+                        <td>${usuario.email}</td>
+                        <td>${usuario.telefone}</td>
+                        <td>
+                            <button class="btn-editar" data-id="${usuario.id}">Editar</button>
+                            <button class="btn-excluir" data-id="${usuario.id}">Excluir</button>
+                        </td>
+                    `;
+                    listaUsuarios.appendChild(tr);
+
+                    // Adicionar event listener para o botão "Editar"
+                    tr.querySelector('.btn-editar').addEventListener('click', () => {
+                        const id = usuario.id;
+                        alert(`Editar usuário com ID: ${id}`);
+                        // Implemente a lógica de edição aqui
+                    });
+
+                    // Adicionar event listener para o botão "Excluir"
+                    tr.querySelector('.btn-excluir').addEventListener('click', async () => {
+                        const id = usuario.id;
+                        const confirmacao = confirm(`Tem certeza que deseja excluir o usuário com ID ${id}?`);
+                        if (confirmacao) {
+                            try {
+                                const response = await fetch(`${url}/${id}`, {
+                                    method: "DELETE"
+                                });
+
+                                if (response.ok) {
+                                    alert("Usuário excluído com sucesso!");
+                                    // Atualizar a tabela de usuários após a exclusão
+                                    getUsuarios();
+                                } else {
+                                    alert("Erro ao excluir usuário. Tente novamente.");
+                                }
+                            } catch (error) {
+                                console.error("Erro ao excluir usuário:", error);
+                            }
+                        }
+                    });
+                });
+            } catch (error) {
+                console.error("Erro ao buscar usuários:", error);
+            }
+        }
+
+        // Função para cadastrar um novo usuário
+        document.getElementById('btnCadastrar').addEventListener('click', async (e) => {
+            e.preventDefault(); // Prevenir o envio do formulário
+            const url = "http://localhost:8001/series"; // Endpoint da API
+
+            // Valores do formulário
+            const nomeUsuario = document.getElementById('nomeUsuario').value;
+            const idade = document.getElementById('numIdade').value;
+            const endereco = document.getElementById('nomeEndereco').value;
+            const email = document.getElementById('email').value;
+            const telefone = document.getElementById('numTelefone').value;
+
+            const dadosEnviados = {
+                'nomeUsuario': nomeUsuario,
+                'idade': idade,
+                'endereco': endereco,
+                'email': email,
+                'telefone': telefone
+            };
+
+            try {
+                const response = await fetch(url, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify(dadosEnviados)
+                });
+
+                if (response.ok) {
+                    alert("O usuário foi cadastrado com sucesso");
+                    // Atualizar a tabela de usuários após o cadastro bem-sucedido
+                    getUsuarios();
+                    // Limpar o formulário após o cadastro bem-sucedido
+                    document.getElementById('formCadastro').reset();
+                } else {
+                    alert("Erro ao cadastrar usuário. Tente novamente");
+                }
+            } catch (error) {
+                console.log(`O consumo do POST deu ruim: ${error}`);
+            }
+        });
+
+        // Executar a função getUsuarios() para exibir os usuários quando a página é carregada
+        document.addEventListener("DOMContentLoaded", () => {
+            getUsuarios();
+        });
+
+
+
+    </script>
 
 </body>
 

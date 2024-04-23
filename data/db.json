@@ -1,88 +1,52 @@
 {
   "series": [
     {
-      "id": "55",
-      "nomeSerie": "filme",
-      "numTemporada": "21",
-      "nomeEstudio": "Estudio",
-      "anoLancamento": "2010"
+      "id": "610f",
+      "nomeUsuario": "everton ",
+      "idade": "20",
+      "endereco": "rua alba ",
+      "email": "evertonrichard333@gmail.com",
+      "telefone": "11968128231"
     },
     {
-      "id": "58",
-      "nomeSerie": "Teste",
-      "numTemporada": "21",
-      "nomeEstudio": "12",
-      "anoLancamento": "1990"
+      "id": "70ce",
+      "nomeUsuario": "everton ",
+      "idade": "20",
+      "endereco": "rua alba ",
+      "email": "evertonrichard333@gmail.com",
+      "telefone": "11968128231"
     },
     {
-      "id": "36",
-      "nomeSerie": "",
-      "numTemporada": "",
-      "nomeEstudio": "",
-      "anoLancamento": ""
+      "id": "9bcb",
+      "nomeUsuario": "everton ",
+      "idade": "20",
+      "endereco": "rua alba ",
+      "email": "evertonrichard333@gmail.com",
+      "telefone": "11968128231"
     },
     {
-      "id": "33",
-      "nomeSerie": "alkjdfhsda",
-      "numTemporada": "83",
-      "nomeEstudio": "teste",
-      "anoLancamento": "2004"
+      "id": "07c8",
+      "nomeUsuario": "tomas jerfeson ",
+      "idade": "24",
+      "endereco": "São Paulo - SP",
+      "email": "evertonrichard444@gmail.com",
+      "telefone": "11968128231"
     },
     {
-      "id": "9",
-      "nomeSerie": "Claudia",
-      "numTemporada": "10",
-      "nomeEstudio": "Portugual",
-      "anoLancamento": "2024"
+      "id": "f0a1",
+      "nomeUsuario": "Everton Richard",
+      "idade": "25",
+      "endereco": "Estrada Cata Preta, 279",
+      "email": "evertonrichard333@gmail.com",
+      "telefone": "11968128231"
     },
     {
-      "id": "18",
-      "nomeSerie": "Matrix",
-      "numTemporada": "20",
-      "nomeEstudio": "comedia",
-      "anoLancamento": "2012"
-    },
-    {
-      "id": "3",
-      "nomeSerie": "Karen",
-      "numTemporada": "2",
-      "nomeEstudio": "comedia",
-      "anoLancamento": "2012"
-    },
-    {
-      "id": "86",
-      "nomeSerie": "Karen",
-      "numTemporada": "25",
-      "nomeEstudio": "comedia",
-      "anoLancamento": "2012"
-    },
-    {
-      "id": "42",
-      "nomeSerie": "",
-      "numTemporada": "",
-      "nomeEstudio": "",
-      "anoLancamento": ""
-    },
-    {
-      "id": "57",
-      "nomeSerie": "Matrix",
-      "numTemporada": "2",
-      "nomeEstudio": "comedia",
-      "anoLancamento": "2012"
-    },
-    {
-      "id": 1,
-      "nomeSerie": "Karen",
-      "numTemporada": "200",
-      "nomeEstudio": "comedia",
-      "anoLancamento": "2012"
-    },
-    {
-      "id": 73,
-      "nomeSerie": "Matrix",
-      "numTemporada": "300",
-      "nomeEstudio": "comedia",
-      "anoLancamento": "2012"
+      "id": "2f75",
+      "nomeUsuario": "tom",
+      "idade": "29",
+      "endereco": "São Paulo - SP",
+      "email": "evertonrichard444@gmail.com",
+      "telefone": "11968128231"
     }
   ]
 }
